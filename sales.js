@@ -4,6 +4,15 @@ function addItem()
 {
   var newItem;
   newItem = document.getElementById("price").value;
+  if (isNaN(newItem))
+  {
+    window.alert("The price has to be a numerical value!");
+  }
+  else
+  {
+    //The price contains numbers
+  }
+
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
   //OTHERWISE,
