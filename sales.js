@@ -1,16 +1,22 @@
 var runningTotal = 0.0;
 
+
 function addItem()
 {
   var newItem;
   newItem = document.getElementById("price").value;
+
   if (isNaN(newItem))
   {
-    window.alert("The price has to be a numerical value!");
+    window.alert("Enter price as a number");
   }
   else
   {
-    //The price contains numbers
+    newItem = Number(runningTotal + newItem );
+    var dollars = asCurrency(runningTotal);
+    setCookie("preTax", runningTotal, 4);
+
+      //The price contains numbers
   }
 
   //IF newItem is not a number
@@ -24,6 +30,8 @@ function addItem()
   // update the value of the input with the id "price" to be an empty string
   // update a cookie called "preTax" with the value of runningTotal
 }
+
+
 
 //takes a number and gives a string with the number displayed as USD currency
 function asCurrency(val)
