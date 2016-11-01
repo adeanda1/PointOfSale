@@ -15,9 +15,8 @@ function addItem()
     newItem = Number(newItem);
     runningTotal = runningTotal + newItem;
     var dollars = asCurrency(runningTotal);
-    console.log(dollars);
     setCookie("preTax", runningTotal, 4);
-    document.getElementById("subtotal").innerHTML = dollars.toString();
+    document.getElementById("subtotal").innerHTML = dollars;
     document.getElementById("price").value = "";
       //The price contains numbers
   }
