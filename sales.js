@@ -12,10 +12,13 @@ function addItem()
   }
   else
   {
-    newItem = Number(runningTotal + newItem );
+    newItem = Number(newItem);
+    runningTotal = runningTotal + newItem;
     var dollars = asCurrency(runningTotal);
+    console.log(dollars);
     setCookie("preTax", runningTotal, 4);
-
+    document.getElementById("subtotal").innerHTML = dollars.toString();
+    document.getElementById("price").value = "";
       //The price contains numbers
   }
 
@@ -24,7 +27,7 @@ function addItem()
   //OTHERWISE,
   // update newItem to its value cast as a number
   // update runningTotal to be its value plus newItem
-  // create a variable called dollars
+  // create a variable called dollar
   // call asCurrency() by with the value of runningTotal and assign the return value to dollars
   // update the innerHTML of the span with the id "subtotal" to be dollars
   // update the value of the input with the id "price" to be an empty string
